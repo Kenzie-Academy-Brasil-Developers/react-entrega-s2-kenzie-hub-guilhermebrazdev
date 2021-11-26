@@ -84,7 +84,7 @@ function Login({ authenticated, setAuthenticated }) {
             <TextField
               id="outlined-basic"
               variant="outlined"
-              // type="password"
+              type="password"
               label="Password"
               {...register("password")}
               fullWidth

@@ -3,6 +3,8 @@ import "./styles.css";
 function Trabalhos({ trabalhos, visibleWorkModal, deleteWork }) {
   const usuario = JSON.parse(localStorage.getItem("@userInfo"));
 
+  console.log("trabalhos", trabalhos);
+
   return (
     <div id="trabalhos">
       <div id="workBox">
@@ -15,7 +17,8 @@ function Trabalhos({ trabalhos, visibleWorkModal, deleteWork }) {
             {" "}
             <div>
               <div>{element.title}</div>
-              <p> {element.status} </p>
+              <p> {element.description} </p>
+              <p> {element.url} </p>
             </div>
             <button onClick={() => deleteWork(element.title)}>Delete</button>
           </div>

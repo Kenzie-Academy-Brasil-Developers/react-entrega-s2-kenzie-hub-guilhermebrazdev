@@ -1,4 +1,4 @@
-/* #modal {
+.modal {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
@@ -8,10 +8,55 @@
   align-items: center;
 }
 
-#modalBox {
+.modalBox {
   height: 300px;
   width: 400px;
-  background: peru;
+  background: var(--white);
   top: 100px;
   z-index: 10px;
-} */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 4px;
+}
+
+.modalBox span {
+  cursor: pointer;
+  color: var(--blue);
+  background: var(--white);
+  border: 0;
+}
+
+#levelSelect {
+  display: flex;
+  flex-direction: column;
+}
+
+#levelbtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.lvlBtn {
+  border-radius: 4px;
+}
+
+#cadastroBox {
+  display: flex;
+  justify-content: center;
+}
+
+#cadastroBox button {
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 600;
+  height: 40px;
+  font-size: 20px;
+  width: 350px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+}

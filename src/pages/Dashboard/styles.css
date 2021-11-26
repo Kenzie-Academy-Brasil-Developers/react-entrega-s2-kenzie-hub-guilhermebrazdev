@@ -56,14 +56,6 @@
   align-items: center;
 }
 
-.modalBox {
-  height: 300px;
-  width: 400px;
-  background: peru;
-  top: 100px;
-  z-index: 10px;
-}
-
 #tecnologias {
   height: 100%;
   /* background: orange; */

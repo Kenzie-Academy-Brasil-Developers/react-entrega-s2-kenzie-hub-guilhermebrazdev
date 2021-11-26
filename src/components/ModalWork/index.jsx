@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { TextField } from "@mui/material";
+
+import "./styles.css";
 
 import { useForm } from "react-hook-form";
 // import axios from "axios";
@@ -36,26 +39,44 @@ function ModalWork({ setWorkModal, addWork }) {
   return (
     <div className="modal">
       <form className="modalBox" onSubmit={handleSubmit(confirm)}>
-        <p>Cadastrar tecnologia</p>
-        <input
-          type="text"
-          {...register("title")}
-          placeholder="Nome do trabalho"
-          required
-        />
-        <input
-          type="text"
-          {...register("description")}
-          placeholder="Descrição"
-          required
-        />
-        <input
-          type="text"
-          {...register("deploy_url")}
-          placeholder="URL do trabalho"
-          required
-        />
-        <div>
+        <p>Cadastrar trabalho</p>
+
+        <div className="singleInputModal">
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            type="text"
+            label="Nome do trabalho"
+            {...register("title")}
+            fullWidth
+            required
+          />
+        </div>
+
+        <div className="singleInputModal">
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            type="text"
+            label="Descrição"
+            {...register("description")}
+            fullWidth
+            required
+          />
+        </div>
+
+        <div className="singleInputModal">
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            type="text"
+            label="Link"
+            {...register("url")}
+            fullWidth
+            required
+          />
+        </div>
+        <div id="cadastroBox">
           <button type="submit">Confirmar</button>
         </div>
       </form>

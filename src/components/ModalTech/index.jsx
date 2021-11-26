@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TextField } from "@mui/material";
 
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -92,25 +93,36 @@ function ModalTech({ setModal, addTech, deleteModal, currentCard, callTech }) {
         </form>
       ) : (
         <form className="modalBox" onSubmit={handleSubmit(confirm)}>
-          <p>Cadastrar tecnologia</p>
-          <input
-            type="text"
-            {...register("title")}
-            placeholder="Nome da Tech"
-            required
-          />
-          <div id="levelSelect">
-            <span className="lvlBtn" onClick={() => setLevel("Iniciante")}>
-              Iniciante
-            </span>
-            <span className="lvlBtn" onClick={() => setLevel("Intermediário")}>
-              Intermediário
-            </span>
-            <span className="lvlBtn" onClick={() => setLevel("Avançado")}>
-              Avançado
-            </span>
+          <h3>Cadastrar tecnologia</h3>
+
+          <div className="singleInputModal">
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              type="text"
+              label="Nome da tech"
+              {...register("title")}
+              fullWidth
+            />
           </div>
-          <div>
+          <div id="levelSelect">
+            <p>Selecione Status:</p>
+            <div id="levelbtns">
+              <span className="lvlBtn" onClick={() => setLevel("Iniciante")}>
+                Iniciante
+              </span>
+              <span
+                className="lvlBtn"
+                onClick={() => setLevel("Intermediário")}
+              >
+                Intermediário
+              </span>
+              <span className="lvlBtn" onClick={() => setLevel("Avançado")}>
+                Avançado
+              </span>
+            </div>
+          </div>
+          <div id="cadastroBox">
             <button type="submit">Confirmar</button>
           </div>
         </form>
