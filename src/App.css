@@ -1,0 +1,23 @@
+:root {
+  --blue: #403caa;
+  --white: #f5f5f5;
+  --green: #11995e;
+  --grey: #999999;
+}
+
+.App {
+  min-height: 100vh;
+  /* background: #12464e; */
+}
+
+#program {
+  /* width: 100%; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
