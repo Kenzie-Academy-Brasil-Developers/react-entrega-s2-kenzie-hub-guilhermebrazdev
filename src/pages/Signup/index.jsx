@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useHistory } from "react-router";
+import { TextField } from "@mui/material";
 
 import axios from "axios";
 import { toast } from "react-hot-toast";
@@ -20,6 +21,7 @@ function Signup() {
     email: yup.string().required("Email Obrigatório").email("Email Inválido"),
     bio: yup.string().required("Fale um pouco sobre você"),
     contact: yup.string().required("Insira seu contato"),
+    course_module: yup.string().required("Seleciona seu Módulo"),
     password: yup
       .string()
       .required("Senha Obrigatório")
@@ -63,52 +65,62 @@ function Signup() {
 
   return (
     <div>
-      <h1>Cadastro</h1>
       <div>
+        <div id="title">
+          <h1>
+            Kenzie <span>Hub</span>
+          </h1>
+        </div>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <div className="singleInput">
-            <span>Nome {errors && <p> : {errors.name?.message}</p>}</span>
-
-            <input
+            <span> {errors && <p> {errors.name?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
               type="text"
               label="Nome"
-              placeholder="Seu Nome"
               {...register("name")}
-              name="name"
+              fullWidth
             />
           </div>
-          <div className="singleInput">
-            <span>Email {errors && <p> : {errors.email?.message}</p>}</span>
 
-            <input
+          <div className="singleInput">
+            <span> {errors && <p> {errors.email?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
               type="email"
               label="Email"
-              placeholder="Email"
               {...register("email")}
-              name="email"
+              fullWidth
             />
           </div>
-          <div className="singleInput">
-            <span>Bio {errors && <p> : {errors.bio?.message}</p>}</span>
 
-            <input
+          <div className="singleInput">
+            <span> {errors && <p> {errors.email?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
               type="text"
               label="Bio"
-              placeholder="Bio"
               {...register("bio")}
+              fullWidth
             />
           </div>
-          <div className="singleInput">
-            <span>Contato {errors && <p> : {errors.contact?.message}</p>}</span>
 
-            <input
+          <div className="singleInput">
+            <span> {errors && <p> {errors.email?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
               type="textarea"
               label="Contato"
-              placeholder="Contato"
               {...register("contact")}
+              fullWidth
             />
           </div>
-          <div className="singleInput">
+          <div className="singleInput" id="select">
+            <span> {errors && <p> {errors.course_module?.message}</p>} </span>
             <select id="course_module" {...register("course_module")}>
               <option value="">Selecione seu Módulo</option>
               <option value="Primeiro módulo (Introdução ao Frontend)">
@@ -127,30 +139,32 @@ function Signup() {
           </div>
 
           <div className="singleInput">
-            <span>Senha {errors && <p> : {errors.password?.message}</p>}</span>
-
-            <input
+            <span> {errors && <p> {errors.email?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              type="password"
               label="Senha"
-              placeholder="Senha"
               {...register("password")}
-              name="password"
+              fullWidth
             />
           </div>
+
           <div className="singleInput">
-            <span>
-              Confirmar senha{" "}
-              {errors && <p> : {errors.confirmPassword?.message}</p>}
-            </span>
-
-            <input
-              label="Confirmação da senha"
-              placeholder="Confirme sua senha"
+            <span> {errors && <p> {errors.email?.message}</p>} </span>
+            <TextField
+              id="outlined-basic"
+              variant="outlined"
+              type="password"
+              label="Confirmar Senha"
               {...register("confirmPassword")}
-              name="confirmPassword"
+              fullWidth
             />
           </div>
 
-          <button type="submit">Cadastrar-se</button>
+          <button type="submit" id="signupButton">
+            Cadastrar-se
+          </button>
         </form>
       </div>
     </div>

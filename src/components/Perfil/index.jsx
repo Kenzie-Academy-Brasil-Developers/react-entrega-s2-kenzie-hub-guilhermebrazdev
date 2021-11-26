@@ -1,7 +1,7 @@
 import "./styles.css";
 
-function Perfil() {
-  const usuario = JSON.parse(localStorage.getItem("@userInfo"));
+function Perfil({ logout }) {
+  // const usuario = JSON.parse(localStorage.getItem("@userInfo"));
 
   return (
     <div id="perfil">
@@ -9,6 +9,7 @@ function Perfil() {
         <div id="perfHeader">
           <p>Perfil</p>
         </div>
+        <button onClick={() => logout()}>Logout</button>
       </div>
     </div>
   );

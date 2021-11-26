@@ -116,7 +116,7 @@ function Dashboard({ authenticated, setAuthenticated }) {
             visibleWorkModal={visibleWorkModal}
             deleteWork={deleteWork}
           />
-          <Perfil />
+          <Perfil logout={logout} />
         </div>
       </div>
       <button onClick={() => logout()}>Logout</button>

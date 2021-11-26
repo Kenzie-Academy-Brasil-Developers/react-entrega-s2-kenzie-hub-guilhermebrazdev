@@ -34,9 +34,16 @@
   margin-top: 50px;
 }
 
+.singleInput {
+  min-height: 90px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 .singleInput p {
   color: #ff3060;
-  width: 80px;
+  margin: 0 0 5px 0;
 }
 
 #botoes {
@@ -53,6 +60,7 @@
   border: 0;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 30px;
 }
 
 #login {

@@ -1,3 +1,19 @@
-/* .singleInput p {
-  color: #ff3060;
-} */
+#select {
+  /* background: chartreuse; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signupButton {
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 600;
+  height: 40px;
+  font-size: 20px;
+  width: 430px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+}
